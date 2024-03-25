@@ -172,7 +172,7 @@ button{
   left: 0%;
   bottom: 0%;
   right: 0%;
-  opacity: 0.5;
+  opacity: 0.6;
   background-color: black;
 }
 
@@ -228,7 +228,7 @@ video{
   position: absolute;
   top: 50%; 
   left: 50%; 
-  transform: translate(-50%, 200%); 
+  transform: translate(-40%, 200%); 
   width: 400px;
 }
 
@@ -237,7 +237,6 @@ video{
   width: 150px;
   height: 50px;
   padding: 10px 0;
-  margin-left: 20px;
   font-size: 0.938rem;
   background-color: transparent;
   color: #ffffff;
@@ -247,13 +246,16 @@ video{
   border: 1px solid rgb(255, 255, 255);
   transition: background-color 0.3s ease;
 }
+.btn_video2{
+  margin-left: 20px;
+}
 
 .btn_video:hover {
-  background-color: #c08803;
+  background-color: #b8a579;
 }
 
 .video_animation{
-  color: #d59501;
+  color: #ffb300;
   opacity: 1;
   transition: 0.3s ease;
 }
@@ -500,6 +502,7 @@ video{
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .box5-item1_title{
@@ -531,7 +534,6 @@ video{
   max-width: 500px;
   height: auto;
   right: -60px;
-  overflow: hidden;
 }
 
 .parallax {
@@ -701,7 +703,6 @@ video{
     border-radius: 0 0 1.5rem 1.5rem;
   }
 }
-
 .nav__img{
   width: 100px;
   position: absolute;
@@ -1040,34 +1041,13 @@ video{
   .video_text{
     width: 650px;
   }
-
-  /* .video_btn{
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, 200%); 
-    width: 400px;
-  } */
-
-  /* .btn_video {
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    padding: 10px 0;
-    margin-left: 20px;
-    background-color: transparent;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid rgb(255, 255, 255);
-    transition: background-color 0.3s ease;
-  } */
   .btn_video {
     width: 120px;
     font-size: 0.875rem;
     height: 40px;
     padding: 7px 0;
+  }
+  .btn_video2{
     margin-left: 50px;
   }
   .box1, .box2, .box3, .box4{
@@ -1106,12 +1086,18 @@ video{
   .play_text{
     display: none;
   }
+  .parallax{
+    display: none;
+  }
   .video_text{
     width: 550px;
     transform: translate(-50%, 10%);
   }
+  #play_button{
+    padding: 12px;
+  }
   .video_btn{
-    transform: translate(-50%, 220%); 
+    transform: translate(-35%, 220%); 
   }
   .decor{
     max-width: 400px;
@@ -1159,11 +1145,17 @@ video{
     width: 350px;
     transform: translate(-50%, 30%);
   }
+  .video_btn{
+    width: 250px;
+    transform: translate(-50%, 300%); 
+  }
   .btn_video {
-    width: 120px;
-    font-size: 0.875rem;
-    height: 40px;
+    width: 90px;
+    font-size: 0.65rem;
+    height: 30px;
     padding: 7px 0;
+  }
+  .btn_video2{
     margin-left: 50px;
   }
   .container-box5{
@@ -1194,13 +1186,14 @@ video{
     width: 250px;
   }
   .video_btn{
+    width: 150px;
     transform: translate(-28%, 200%); 
   }
   .btn_video {
-    width: 90px;
-    font-size: 0.65rem;
-    height: 30px;
-    padding: 7px 0;
+    width: 60px;
+    font-size: 0.45rem;
+    height: 20px;
+    padding: 4px 0;
     margin-left: 10px;
   }
 }
