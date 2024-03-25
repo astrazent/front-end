@@ -1,0 +1,261 @@
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
+
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+// /*=============== HOME SWIPER ===============*/
+let homeSwiper  = new Swiper(".home-swiper", {
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+},
+})
+
+
+// // ==================== BOX SWIPER ==========================
+
+// var swiper = new Swiper(".mySwiper", {
+//     slidesPerView: 3,
+//     spaceBetween: 30,
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+// });
+var swiper = new Swiper(".mySwiper", {
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+    },
+    spaceBetween: 20, 
+    slidesPerView: 1,
+    lazyloading: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        992:{
+            slidesPerView: 3,
+            spaceBetween: 30
+        } 
+        
+    }
+});
+
+
+
+
+
+
+
+
+/*=============== CHANGE BACKGROUND HEADER ===============*/
+function scrollHeader(){
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*=============== NEW SWIPER ===============*/
+let newSwiper = new Swiper(".new-swiper", {
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: 'true',
+    spaceBetween: 16,
+});
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*=============== SHOW SCROLL UP ===============*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 460) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true
+})
+
+sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
+sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100})
+sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
+sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
+
+
+
+var video = document.querySelector(".video");
+var playText = document.querySelector(".play_text");
+var playButton = document.getElementById("play_button");
+var playIcon = document.getElementById("play_icon");
+
+
+// Event listener for the play/pause button
+playButton.addEventListener("click", function() {
+    if (video.paused == true) {
+    // Play the video
+    video.play();
+
+    // Update the button text to 'Pause'
+    playText.innerHTML = "Pause video";
+
+    // Update icon
+    playIcon.classList.remove("ri-play-fill");
+    playIcon.classList.add("ri-pause-line");
+    } else {
+    // Pause the video
+    video.pause();
+
+    // Update the button text to 'Play'
+    playText.innerHTML = "Play video";
+
+    // Update icon
+    playIcon.classList.remove("ri-pause-line");
+    playIcon.classList.add("ri-play-fill");
+}
+});
+
+// ================================== count visited ============================
+
+let value = document.querySelector(".box5-item2_content");
+
+let startValue = 57855;
+let duration =  Math.floor(Math.random() * 10) * 250;
+
+let counter = setInterval(function () {
+    let randomValue = Math.random();
+    let direction = randomValue <= 0.5 ? -1 : 1; // Xác định hướng tăng (+1) hoặc giảm (-1)
+    startValue += direction * Math.floor(randomValue * 10); // Tạo ra một số ngẫu nhiên từ 1 đến 10
+    duration = duration / (direction * 1.5);
+    value.textContent = startValue;
+}, duration);
+
+
+// ==============================================change text footer===============================
+
+//shuffle array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Chọn một phần tử ngẫu nhiên từ phần tử chưa được xáo trộn
+      [array[i], array[j]] = [array[j], array[i]]; // Hoán đổi vị trí giữa phần tử hiện tại và phần tử đã được chọn ngẫu nhiên
+    }
+    return array; // Trả về mảng đã được xáo trộn
+}
+
+
+//footer text animation
+var changeText = document.querySelector(".change-text");
+changeText.style.color = "#5551FF";
+const arr_text_shuffle = ["translating", "learning", "practicing", "traveling"];
+const arr_text = shuffleArray(arr_text_shuffle);
+
+var index = 0;
+// Thiết lập hàm để thay đổi nội dung của phần tử mỗi 3 giây
+setInterval(function() {
+    changeText.style.opacity = "0";
+
+    setTimeout(() =>{
+        changeText.textContent = arr_text[index];
+        if(index == 0){
+            changeText.style.color = "#FFFFFF";
+        }
+        if(index == 1){
+            changeText.style.color = "#0FA958";
+        }
+        else if(index == 2){
+            changeText.style.color = "#5551FF";
+        }
+        else if(index == 3){
+            changeText.style.color = "#C7B9FF";
+        }
+        index++;
+        if (index === 4) {
+            index = 0;
+        }
+        changeText.style.opacity = "1";
+    }, 200);
+    if(changeText.textContent == 98756){
+        clearInterval();
+    }
+}, 2500); // 3000 milliseconds = 3 seconds
+
+
+
+
+// ================================================================change text video===============================
+
+//video text animation
+var changeAnimation = document.querySelector(".video_animation");
+const animation_text_shuffle = ["future.", "work."];
+const animation_text = shuffleArray(animation_text_shuffle);
+var index2 = 0;
+// Thiết lập hàm để thay đổi nội dung của phần tử mỗi 3 giây
+var loop = setInterval(function() {
+    changeAnimation.style.opacity = "0";
+
+    setTimeout(() =>{
+        changeAnimation.textContent = animation_text[index2];
+        console.log(animation_text[index2]);
+        changeAnimation.style.opacity = "1";
+        index2++;
+    }, 200);
+    if (index2 == 1) {
+        clearInterval(loop);
+    }
+}, 2000); // 3000 milliseconds = 3 seconds
+
