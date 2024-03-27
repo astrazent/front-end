@@ -1,8 +1,8 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close'),
-      header = document.getElementById('header')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close'),
+    header = document.getElementById('header')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -30,27 +30,8 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-// /*=============== HOME SWIPER ===============*/
-let homeSwiper  = new Swiper(".home-swiper", {
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-},
-})
 
-
-// // ==================== BOX SWIPER ==========================
-
-// var swiper = new Swiper(".mySwiper", {
-//     slidesPerView: 3,
-//     spaceBetween: 30,
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
-// });
+// ==================== COMMUNITY SWIPER ==========================
 var swiper = new Swiper(".mySwiper", {
     autoplay: {
         delay: 2500,
@@ -75,11 +56,6 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-
-
-
-
-
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
@@ -87,13 +63,7 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-/*=============== NEW SWIPER ===============*/
-let newSwiper = new Swiper(".new-swiper", {
-    centeredSlides: true,
-    slidesPerView: "auto",
-    loop: 'true',
-    spaceBetween: 16,
-});
+
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')

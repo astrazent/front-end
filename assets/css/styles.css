@@ -9,13 +9,13 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-
+  --nav-color: #131417;
   /*========== Colors ==========*/
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
   --first-color-alt: hsl(var(--hue), 91%, 50%);
   --title-color: hsl(var(--hue), 4%, 100%);
-  --text-color: hsl(var(--hue), 4%, 85%);
+  --text-color: hsl(var(--hue), 4%, 65%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
 
   /*Green gradient*/
@@ -64,18 +64,6 @@
 
 }
 
-/* Responsive typography */
-@media screen and (min-width: 992px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
-}
 
 /*=============== BASE ===============*/
 *{
@@ -89,7 +77,6 @@ html{
 }
 
 body{
-  margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background: var(--body-color);
@@ -145,11 +132,12 @@ button{
 
 /* ====================Video================= */
 .image-video{
+  object-fit: cover;
   position: relative;
+  height: 100svh;
+  width: 100svw;
   height: 100vh;
   width: 100vw;
-  height: 100 vh;
-  width: 100 vw;
 }
 
 .image-video::before{
@@ -680,33 +668,39 @@ video{
 .nav__toggle{
   font-size: 1.25rem;
   cursor: pointer;
+  order: -1;
 }
 
+.nav__login{
+  margin-left: 150px;
+}
 @media screen and (max-width: 767px){
   .nav__menu{
     position: fixed;
     width: 100%;
-    background: var(--container-color);
+    background: var(--nav-color);
     top: -150%;
     left: 0;
     padding: 3.5rem 0;
     transition: .4s;
     z-index: var(--z-fixed);
-    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  .nav__login{
+    margin-left: 0px;
   }
 }
 .nav__img{
   width: 100px;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 
 .nav__close{
   font-size: 1.8rem;
   position: absolute;
   top: .5rem;
-  right: .7rem;
+  left: .7rem;
   cursor: pointer;
 }
 
@@ -720,7 +714,7 @@ video{
 .nav__link{
   text-transform: uppercase;
   font-weight: var(--font-black);
-  transition: .4s;
+  transition: .3s;
 }
 
 .nav__link:hover{
@@ -844,7 +838,7 @@ video{
 }
 
 .footer-list{
-  height: 500px;
+  height: 100%;
   background-color: #131417;
 }
 
@@ -1038,7 +1032,7 @@ video{
     --margin-bottom-title: 16px;
     --margin-bottom-content: 24px;
     --padding-top-function: 64px;
-  --font-size-button: 1rem;
+    --font-size-button: 1rem;
     --font-size-footter-header: 2rem;
   }
   .play_text{
@@ -1116,6 +1110,9 @@ video{
   .box6{
     max-width: 225px;
   }
+  .box6-item1_title{
+    transform: translateX(-12%);
+  }
   .box6-item2{
     padding-bottom: 40px;
   }
@@ -1129,15 +1126,20 @@ video{
 
 @media screen and (max-width: 320px){
   :root{
+    --font-size-title: 2rem;
+    --font-size-content: 1rem;
+    --font-size-button: 0.5rem;
     --font-size-video: 1.25rem;
   }
   .video_text{
-    width: 250px;
+    width: 150px;
   }
   .video_btn{
     margin: 15px auto;
   }
-
+  .box6-item1_title{
+    transform: none;
+  }
   .btn_video {
     width: 60px;
     font-size: 0.45rem;
