@@ -1,6 +1,6 @@
 :root{
     --background-color: rgb(251, 255, 0);
-    --padding-carousel: 70px;
+    --padding-carousel: 40px;
 }
 
 @keyframes slide {
@@ -19,7 +19,7 @@ to {
 .logo-text{
     text-align: center;
     color: #131417;
-    font-weight: 573;
+    font-weight: 600;
     font-size: 1rem;
 }
 
@@ -65,20 +65,9 @@ to {
 }
 @media screen and (max-width: 1436px){
     :root{
-    --padding-carousel: 72px;
-    }
-}
-@media screen and (max-width: 767px){
-    :root{
-    --padding-carousel: 48px;
-    }
-}
-@media screen and (max-width: 576px){
-    :root{
-    --padding-carousel: 20px;
-    --background-color: rgb(251, 255, 0);
+    --padding-carousel: 22px;
     }
     .logos{
-        padding-top: 10px;
+        padding-top: 22px;
     }
 }

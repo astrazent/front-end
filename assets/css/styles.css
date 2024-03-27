@@ -1,6 +1,11 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
 
+/* ================== whyte font========================= */
+@font-face {
+  font-family: whyte;
+  src: url(../../ABCWhyte-Regular-Trial.woff);
+}
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -15,25 +20,17 @@
 
   /*Green gradient*/
   --body-color: #131417;
-  --container-color: linear-gradient(136deg, hsl(104, 28%, 35%) 0%, hsl(58, 28%, 35%) 100%);
+  --container-color: linear-gradient(136deg, hsl(103, 100%, 10%) 0%, hsl(226, 97%, 51%) 100%);
   
-  /*Red gradient*/
-  /* --body-color: linear-gradient(90deg, hsl(360, 28%, 40%) 0%, hsl(18, 28%, 40%) 100%);
-  --container-color: linear-gradient(136deg, hsl(360, 28%, 35%) 0%, hsl(18, 28%, 35%) 100%); */
-
-  /*Black solid*/
-  /* --body-color: hsl(30, 8%, 8%);
-  --container-color: hsl(30, 8%, 10%); */
-
   /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  /* --body-font: 'Poppins', sans-serif; */
+  --body-font: 'Poppins', whyte, sans-serif;
+  --font-size-title: 5rem;
+  --font-size-content: 1.375rem;
+  --font-size-footter-header: 4rem;
+  --font-size-video: 3rem;
+  --font-size-box5-content: 2.375rem;
+  --font-size-button: 1.125rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
@@ -52,23 +49,19 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
-}
 
-:root{
-  --font-size-title: 5rem;
-  --font-size-content: 1.375rem;
-  --padding-top-function: 144px;
+  /* =========== Margenes Customize =============== */
   --margin-bottom-title: 32px;
   --margin-bottom-text-title: 24px;
   --margin-bottom-content: 32px;
   --margin-left-container: 58px;
   --margin-left-container-sm: 32px;
-  --font-size-box5-content: 2.375rem;
-  --button-font-size: 1.125rem;
-  --padding-top-box5-title: 200px;
-  --font-size-footter-header: 4rem;
+
+  /* =========== Paddies Customize =============== */
+  --padding-top-function: 144px;
   --padding-top-box5-content: 100px;
-  --font-size-video: 3rem;
+  --padding-top-box5-title: 200px;
+
 }
 
 /* Responsive typography */
@@ -138,12 +131,6 @@ button{
   padding: 4.5rem 0 2rem;
 }
 
-.section__title{
-  font-size: var(--h2-font-size);
-  margin-bottom: var(--mb-2);
-  text-align: center;
-}
-
 /*=============== LAYOUT ===============*/
 .container{
   max-width: 968px;
@@ -161,6 +148,8 @@ button{
   position: relative;
   height: 100vh;
   width: 100vw;
+  height: 100 vh;
+  width: 100 vw;
 }
 
 .image-video::before{
@@ -208,14 +197,18 @@ video{
 .play_text{
   margin-left: 5px;
 }
+
+
+
 .video_text{
   position: absolute;
   width: 850px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 70%);
+  bottom: 20px;
+  transform: translate(-50%);
   z-index: 10;
-  
+  text-align: center;
 }
 .video_text p{
   font-size: var(--font-size-video);
@@ -225,11 +218,8 @@ video{
 }
 
 .video_btn{
-  position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-40%, 200%); 
-  width: 400px;
+  display: inline-block;
+  margin: 50px auto;
 }
 
 .btn_video {
@@ -253,6 +243,9 @@ video{
 .btn_video:hover {
   background-color: #000000;
 }
+
+
+
 
 .video_animation{
   color: #ffb300;
@@ -502,7 +495,6 @@ video{
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
 
 .box5-item1_title{
@@ -675,7 +667,7 @@ video{
 }
 
 .nav__logo-img{
-  width: 1.25rem;
+  width: 1.5rem;
 }
 
 .nav__link,
@@ -743,6 +735,7 @@ video{
 /* Change background header */
 .scroll-header{
   /* background: var(--container-color); */
+  /* background-color: #131417; */
   background-color: #131417;
 }
 
@@ -763,43 +756,48 @@ video{
 }
 
 /*=============== BUTTONS ===============*/
-.button{
-  display: inline-block;
-  background-color: var(--first-color);
-  color: var(--title-color);
-  padding: 1rem 1.75rem;
-  border-radius: .5rem;
-  font-weight: var(--font-medium);
-  transition: .3s;
-}
 
-.button:hover{
-  background-color: var(--first-color-alt);
-}
 
-.button__icon{
-  font-size: 1.25rem;
-}
 
-.button--ghost{
-  border: 2px solid;
-  background-color: transparent;
-  border-radius: 3rem;
-  padding: .75rem 1.5rem;
-}
 
-.button--ghost:hover{
-  background: none;
-}
-
-.button--link{
-  color: var(--title-color);
-}
-
-.button--flex{
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  background: var(--container-color);
+  right: 1rem;
+  bottom: -20%;
   display: inline-flex;
-  align-items: center;
-  column-gap: .5rem;
+  padding: .3rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+}
+
+.scrollup__icon{
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.scrollup:hover{
+  background: var(--container-color);
+  opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+  bottom: 3rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: 0.6rem;
+  background: #cdcccc;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #272525;
+  border-radius: .5rem;
 }
 
 /* ==========================================footer============= */
@@ -951,45 +949,7 @@ video{
   margin-top: 4.5rem;
 }
 
-/*=============== SCROLL UP ===============*/
-.scrollup{
-  position: fixed;
-  background: var(--container-color);
-  right: 1rem;
-  bottom: -20%;
-  display: inline-flex;
-  padding: .3rem;
-  border-radius: .25rem;
-  z-index: var(--z-tooltip);
-  opacity: .8;
-  transition: .4s;
-}
 
-.scrollup__icon{
-  font-size: 1.25rem;
-  color: var(--title-color);
-}
-
-.scrollup:hover{
-  background: var(--container-color);
-  opacity: 1;
-}
-
-/* Show Scroll Up*/
-.show-scroll{
-  bottom: 3rem;
-}
-
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
-  width: 0.6rem;
-  background: #413e3e;
-}
-
-::-webkit-scrollbar-thumb{
-  background: #272525;
-  border-radius: .5rem;
-}
 
 /*===============  BREAKPOINTS ===============*/
 /* 214 */
@@ -1003,11 +963,13 @@ video{
   }
 }
 
-
 @media screen and (max-width: 1200px){
   :root{
     --padding-top-function: 88px;
     --font-size-footter-header: 3.25rem;
+  }
+  .box5{
+    overflow: hidden;
   }
   .box1, .box2, .box3, .box4{
     margin: 0 var(--margin-left-container);
@@ -1029,7 +991,6 @@ video{
   }
 }
 
-
 @media screen and (max-width: 992px) {
   :root{
     --font-size-title: 3rem;
@@ -1046,9 +1007,6 @@ video{
     font-size: 0.875rem;
     height: 40px;
     padding: 7px 0;
-  }
-  .btn_video2{
-    margin-left: 50px;
   }
   .box1, .box2, .box3, .box4{
     grid-template-columns: 1fr 1fr;
@@ -1075,12 +1033,12 @@ video{
 }
 @media screen and (max-width: 767px) {
   :root{
-    --font-size-title: 2.75rem;
-    --font-size-content: 1rem;
+    --font-size-title: 3rem;
+    --font-size-content: 1.5rem;
     --margin-bottom-title: 16px;
     --margin-bottom-content: 24px;
     --padding-top-function: 64px;
-    --button-font-size: 1rem;
+  --font-size-button: 1rem;
     --font-size-footter-header: 2rem;
   }
   .play_text{
@@ -1091,17 +1049,9 @@ video{
   }
   .video_text{
     width: 550px;
-    transform: translate(-50%, 10%);
   }
   #play_button{
     padding: 12px;
-  }
-  .video_btn{
-    transform: translate(-35%, 220%); 
-  }
-  .decor{
-    max-width: 400px;
-    right: -120px;
   }
   .box1, .box2, .box3, .box4{
     row-gap: 30px;
@@ -1110,6 +1060,10 @@ video{
     "d d"
     "e e"
     "f f";
+  }
+  .decor{
+    max-width: 400px;
+    right: -120px;
   }
   .footer-grid{
     grid-template-columns: 1fr;
@@ -1134,29 +1088,24 @@ video{
 /* For medium devices */
 @media screen and (max-width: 576px){
   :root{
-    --font-size-title: 2rem;
-    --font-size-content: 0.75rem;
-    --button-font-size: 0.5rem;
+    --font-size-title: 3rem;
+    --font-size-content: 1.5rem;
+    --font-size-button: 1rem;
     --padding-top-box5-title: 100px;
     --padding-top-box5-content: 30px;
     --font-size-video: 1.75rem;
   }
   .video_text{
     width: 350px;
-    transform: translate(-50%, 30%);
   }
   .video_btn{
-    width: 250px;
-    transform: translate(-50%, 300%); 
+    margin: 25px auto;
   }
   .btn_video {
     width: 90px;
     font-size: 0.65rem;
     height: 30px;
     padding: 7px 0;
-  }
-  .btn_video2{
-    margin-left: 50px;
   }
   .container-box5{
     padding-top: 0;
@@ -1186,9 +1135,9 @@ video{
     width: 250px;
   }
   .video_btn{
-    width: 150px;
-    transform: translate(-28%, 200%); 
+    margin: 15px auto;
   }
+
   .btn_video {
     width: 60px;
     font-size: 0.45rem;
@@ -1197,11 +1146,25 @@ video{
     margin-left: 10px;
   }
 }
-
-
-
-
-
+@media screen and (max-height: 576px){
+  .video_text{
+    transform: translate(-50%, -40%);
+  }
+  .btn_video {
+    width: 120px;
+    font-size: 0.875rem;
+    height: 40px;
+    padding: 7px 0;
+  }
+  .video_btn{
+    margin: 20px auto;
+  }
+}
+@media screen and (max-height: 420px){
+  .image-video{
+    height: 420px;
+  }
+}
 
 
 
@@ -1209,49 +1172,7 @@ video{
 
 
 
-
-
-
-
-/* For small devices */
-@media screen and (max-width: 320px){
-  .container{
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
-  }
-
-  .home__img{
-    height: 200px;
-  }
-  .home__buttons{
-    flex-direction: column;
-    width: max-content;
-    row-gap: 1rem;
-  }
-
-  .category__container,
-  .trick__container{
-    grid-template-columns: .8fr;
-    justify-content: center;
-  }
-}
-
 /* For medium devices */
-@media screen and (min-width: 576px){
-  .about__container{
-    grid-template-columns: .8fr;
-    justify-content: center;
-  }
-
-  .newsletter__container{
-    display: grid;
-    grid-template-columns: .7fr;
-    justify-content: center;
-  }
-  .newsletter__description{
-    padding: 0 3rem;
-  }
-}
 
 @media screen and (min-width: 767px){
   body{

@@ -1,7 +1,8 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+      navClose = document.getElementById('nav-close'),
+      header = document.getElementById('header')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -81,7 +82,6 @@ var swiper = new Swiper(".mySwiper", {
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
-    const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
     if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
@@ -170,6 +170,42 @@ playButton.addEventListener("click", function() {
 }
 });
 
+// ========================= detect chrome user ========================
+// please note, 
+// that IE11 now returns undefined again for window.chrome
+// and new Opera 30 outputs true for window.chrome
+// but needs to check if window.opr is not undefined
+// and new IE Edge outputs to true now for window.chrome
+// and if not iOS Chrome check
+// so use the below updated condition
+var isChromium = window.chrome;
+var winNav = window.navigator;
+var vendorName = winNav.vendor;
+var isOpera = typeof window.opr !== "undefined";
+var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+var isIOSChrome = winNav.userAgent.match("CriOS");
+
+if (isIOSChrome) {
+   // is Google Chrome on IOS
+    header.style.position = "static";
+} else if(
+  isChromium !== null &&
+  typeof isChromium !== "undefined" &&
+  vendorName === "Google Inc." &&
+  isOpera === false &&
+  isIEedge === false
+) {
+   // is Google Chrome
+} else { 
+   // not Google Chrome 
+}
+
+
+
+
+
+
+
 // ================================== count visited ============================
 
 let value = document.querySelector(".box5-item2_content");
@@ -183,6 +219,9 @@ let counter = setInterval(function () {
     startValue += direction * Math.floor(randomValue * 10); // Tạo ra một số ngẫu nhiên từ 1 đến 10
     duration = duration / (direction * 1.5);
     value.textContent = startValue;
+    if(value.textContent == 87865){
+        clearInterval(counter);
+    }
 }, duration);
 
 
@@ -229,15 +268,12 @@ setInterval(function() {
         }
         changeText.style.opacity = "1";
     }, 200);
-    if(changeText.textContent == 98756){
-        clearInterval();
-    }
 }, 2500); // 3000 milliseconds = 3 seconds
 
 
 
 
-// ================================================================change text video===============================
+// ===========================================================change text video===============================
 
 //video text animation
 var changeAnimation = document.querySelector(".video_animation");
