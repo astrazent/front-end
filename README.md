@@ -9,4 +9,4 @@
 - Sử dụng Desktop First methodology, sau đó mới code cho Mobile.
 - Tương thích với hầu hết các loại điện thoại, thuận tiện khi sử dụng.
 
-![Infinity](/preview.png)
+![Infinity](/assets/img/preview.png)

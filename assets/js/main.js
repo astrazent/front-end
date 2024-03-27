@@ -129,16 +129,19 @@ var vendorName = winNav.vendor;
 var isOpera = typeof window.opr !== "undefined";
 var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
 var isIOSChrome = winNav.userAgent.match("CriOS");
-
+var imageVideo = document.querySelector(".image-video");
 if (isIOSChrome) {
-   // is Google Chrome on IOS
-    header.style.position = "static";
+    // is Google Chrome on IOS
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if(width < 767){
+        imageVideo.style.height = 667;
+    }
 } else if(
-  isChromium !== null &&
-  typeof isChromium !== "undefined" &&
-  vendorName === "Google Inc." &&
-  isOpera === false &&
-  isIEedge === false
+    isChromium !== null &&
+    typeof isChromium !== "undefined" &&
+    vendorName === "Google Inc." &&
+    isOpera === false &&
+    isIEedge === false
 ) {
    // is Google Chrome
 } else { 
