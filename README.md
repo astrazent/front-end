@@ -1,14 +1,12 @@
-# Responsive Halloween Website 🎃
-## [Watch it on youtube](https://youtu.be/lgo1CEPZoxg)
-### Responsive Halloween Website 🎃
+# Responsive translate Website 🎃
+## Nhóm 8 - lập trình web
+### Infinity translate Website 🎃
 
-- Responsive Halloween Website Using HTML, CSS & JavaScript.
-- Contains animations when scrolling.
-- It has three color designs (green, red and black)
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+- Website sử dụng  HTML, CSS & JavaScript.
+- Có các hiệu ứng động khi scrolling.
+- Màu sắc đa dạng.
+- Smooth scrolling trong mỗi phần.
+- Sử dụng Desktop First methodology, sau đó mới code cho Mobile.
+- Tương thích với hầu hết các loại điện thoại, thuận tiện khi sử dụng.
 
-Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
-
-![halloween](/preview.png)
+![Infinity](/preview.png)

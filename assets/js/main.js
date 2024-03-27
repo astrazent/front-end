@@ -30,7 +30,6 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-
 // ==================== COMMUNITY SWIPER ==========================
 var swiper = new Swiper(".mySwiper", {
     autoplay: {
@@ -54,8 +53,6 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
-
-
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
@@ -63,27 +60,6 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive(){
-    const scrollY = window.pageYOffset
-
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute('id')
-
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
-}
-window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 function scrollUp(){
@@ -93,29 +69,28 @@ function scrollUp(){
 }
 window.addEventListener('scroll', scrollUp)
 
+
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
+    origin: 'bottom',
+    distance: '150px',
     duration: 2500,
     delay: 400,
     // reset: true
 })
 
-sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`)
-sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100})
-sr.reveal(`.about__data, .discount__img`,{origin: 'left'})
-sr.reveal(`.about__img, .discount__data`,{origin: 'right'})
+sr.reveal(`.item3, .box2-item3, .box3-item3, .box4-item3`,{interval: 100})
+sr.reveal(`.box5`,{origin: 'left'})
+sr.reveal(`.box6-item2`,{origin: 'top'})
+sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100, origin: 'top'})
 
 
-
+// ==================== PLAY PAUSE BUTTON ==============================
 var video = document.querySelector(".video");
 var playText = document.querySelector(".play_text");
 var playButton = document.getElementById("play_button");
 var playIcon = document.getElementById("play_icon");
 
-
-// Event listener for the play/pause button
 playButton.addEventListener("click", function() {
     if (video.paused == true) {
     // Play the video
@@ -140,7 +115,7 @@ playButton.addEventListener("click", function() {
 }
 });
 
-// ========================= detect chrome user ========================
+// ==========================  DETECT CHROME USER ============================
 // please note, 
 // that IE11 now returns undefined again for window.chrome
 // and new Opera 30 outputs true for window.chrome
@@ -172,11 +147,7 @@ if (isIOSChrome) {
 
 
 
-
-
-
-
-// ================================== count visited ============================
+// ================================== COUNT VISITED ===================================
 
 let value = document.querySelector(".box5-item2_content");
 
@@ -195,7 +166,7 @@ let counter = setInterval(function () {
 }, duration);
 
 
-// ==============================================change text footer===============================
+// ================================= CHANGE TEXT FOOTER ===============================
 
 //shuffle array
 function shuffleArray(array) {
@@ -243,7 +214,7 @@ setInterval(function() {
 
 
 
-// ===========================================================change text video===============================
+// ============================== CHANGE TEXT VIDEO ===============================
 
 //video text animation
 var changeAnimation = document.querySelector(".video_animation");

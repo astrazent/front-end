@@ -4,12 +4,12 @@
 }
 
 @keyframes slide {
-from {
-    transform: translateX(0);
-}
-to {
-    transform: translateX(-100%);
-}
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .logo-banner{
@@ -63,6 +63,7 @@ to {
     height: 20px;
     margin: 0 20px;
 }
+
 @media screen and (max-width: 1436px){
     :root{
     --padding-carousel: 22px;
