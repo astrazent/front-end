@@ -135,6 +135,7 @@ if (isIOSChrome) {
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if(width < 767){
         imageVideo.style.height = 667;
+        alert("check")
     }
 } else if(
     isChromium !== null &&
