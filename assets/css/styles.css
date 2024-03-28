@@ -1057,12 +1057,7 @@ video{
   .footer-bar{
     padding: 64px 0;
   }
-  html {
-    background-color: red;
-    overflow: hidden;
-    width: 100%;
-  }
-  
+
   body {
     height: 100%;
     position: fixed;

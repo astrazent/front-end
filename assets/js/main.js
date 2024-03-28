@@ -133,8 +133,7 @@ var imageVideo = document.querySelector(".image-video");
 if (isIOSChrome) {
     // is Google Chrome on IOS
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if(width < 767){
-        imageVideo.style.height = 667;
+    if(width < 576){
         alert("check")
     }
 } else if(
