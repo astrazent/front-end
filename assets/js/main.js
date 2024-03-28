@@ -81,8 +81,8 @@ const sr = ScrollReveal({
 
 sr.reveal(`.item3, .box2-item3, .box3-item3, .box4-item3`,{interval: 100})
 sr.reveal(`.box5`,{origin: 'left'})
-sr.reveal(`.box6-item2`,{origin: 'top'})
-sr.reveal(`.category__data, .trick__content, .footer__content`,{interval: 100, origin: 'top'})
+sr.reveal(`.box6-item2`,{origin: 'bottom'})
+sr.reveal(`.footer__content`,{interval: 100, origin: 'top'})
 
 
 // ==================== PLAY PAUSE BUTTON ==============================
@@ -134,7 +134,7 @@ if (isIOSChrome) {
     // is Google Chrome on IOS
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if(width < 576){
-        alert("check")
+        alert("nếu bạn đang dùng chrome trên iphone, xin hãy đổi sang trình duyệt safari để có được trải nghiệm tốt nhất")
     }
 } else if(
     isChromium !== null &&
