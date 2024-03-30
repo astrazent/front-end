@@ -115,6 +115,15 @@ playButton.addEventListener("click", function() {
 }
 });
 
+// ===================== VIDEO TEXT HOVER =====================================
+var videoText = document.querySelector(".hoverText");
+videoText.addEventListener("mouseenter", async () => {
+    videoText.style.color = '#3c87c9';
+    await setTimeout(function() {
+        videoText.style.color = '#ffffff';
+    }, 10000);
+})
+
 // ==========================  DETECT CHROME USER ============================
 // please note, 
 // that IE11 now returns undefined again for window.chrome
